@@ -1,6 +1,6 @@
 {
   "name": "dockermachine",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A wrapper for the docker-machine CLI",
   "homepage":"https://github.com/zekizeki/nodeDockerMachine",
   "main": "index.js",
@@ -15,10 +15,16 @@
     "docker-machine"
   ],
   "author": "Rob Smart <smartrob@uk.ibm.com>",
-  "license": "Apache2",
+  "license": "Apache-2.0",
+  "dependencies": {
+         "q": "~1.2.0"
+        },
   "devDependencies": {
     "mocha": "~2.2.5",
-    "chai": "~2.3.0",
-    "q": "~1.2.0"
-  }
+    "chai": "~2.3.0"
+  },
+  "repository" : {
+        "type":"git",
+        "url":"https://github.com/zekizeki/nodeDockerMachine.git"
+        }
 }
