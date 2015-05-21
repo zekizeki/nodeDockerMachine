@@ -11,13 +11,14 @@ A node.js wrapper for the docker-machine command line tool
 The docker-machine command line tool must be installed and accessible in the path
 
 
-## Step 2: Installation
+### Step 2: Installation
     
 To install it, use npm:
 
 npm install dockermachine
 
-##The following docker-machine methods are implemented
+
+## The following docker-machine methods are implemented
 
 -   active		Get or set the active machine
 -   create		Create a machine
