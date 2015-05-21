@@ -1,3 +1,43 @@
+dockermachine node.js module
+============================
+
+A node.js wrapper for the docker-machine command line tool
+
+
+## Installation
+
+### Step 1: Prerequisites
+
+The docker-machine command line tool must be installed and accessible in the path
+
+
+## Step 2: Installation
+    
+To install it, use npm:
+
+npm install dockermachine
+
+##The following docker-machine methods are implemented
+
+-   active		Get or set the active machine
+-   create		Create a machine
+-   config		Print the connection config for machine
+-   inspect		Inspect information about a machine
+-   ip			Get the IP address of a machine
+-   kill			Kill a machine
+-   ls			List machines
+-   regenerate-certs	Regenerate TLS Certificates for a machine
+-   restart		Restart a machine
+-   rm			Remove a machine
+-   ssh			Log into or run a command on a machine with SSH
+-   start		Start a machine
+-   stop			Stop a machine
+-   upgrade		Upgrade a machine to the latest version of Docker
+
+
+## License 
+
+
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -174,4 +214,7 @@
       of your accepting any such warranty or additional liability.
 
    END OF TERMS AND CONDITIONS
+
    
+
+
