@@ -36,6 +36,51 @@ npm install dockermachine
 -   upgrade		Upgrade a machine to the latest version of Docker
 
 
+## examples
+
+### Specifying options
+
+Flags to pass to docker machine can be specified by using their fully qualified name without the --
+
+Switch the below flags for the provider of your choice, make sure the driver is specified.
+
+```javascript
+var options = {
+    "driver" : "softlayer",
+    "softlayer-api-key" : "XXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "softlayer-user" : "your@email.com",
+    "softlayer-domain" : "mytestdomain.com",
+    "softlayer-region" : "ams01",
+    "softlayer-hostname" : "testname"
+}
+```
+
+
+###Create a machine
+
+```javascript
+    machine.create("mylovelymachine",options).then(
+            function (output) {
+                console.log(output);
+            }
+        ).fail(function(err){ 
+            
+            console.log(err);
+        })
+```
+
+###Delete a machine
+```javascript
+    machine.rm("mylovelymachine").then(
+        function (output) {
+                console.log(output);
+        }
+        ).fail(function(err){ 
+            console.log(err);
+        })
+```
+
+
 ## License 
 
 
