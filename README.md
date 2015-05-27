@@ -80,6 +80,31 @@ var options = {
         })
 ```
 
+###List machines
+This will return an array of objects representing each machine
+
+```javascript
+    machine.ls().then(
+        function (output) {
+                console.log(output);
+        }
+        ).fail(function(err){ 
+            console.log(err);
+        })
+```
+
+###Inspect a machine
+This will return an object containing details of the named machine
+
+```javascript
+    machine.inspect("mylovelymachine").then(
+        function (output) {
+                console.log(output);
+        }
+        ).fail(function(err){ 
+            console.log(err);
+        })
+        ```
 
 ## License 
 

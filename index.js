@@ -15,6 +15,7 @@
 **/
 
 var q = require("Q");
+var os = require("os");
 
 module.exports = {
     
@@ -31,8 +32,42 @@ module.exports = {
                 return;
             }
                 
+            // parse the stdout into json, format is
+            //NAME        ACTIVE   DRIVER      STATE     URL                      SWARM
+            //mochatest   *        softlayer   Running   tcp://159.8.2.149:2376
             
-            d.resolve(stdout);
+            var lines = stdout.split(os.EOL);
+            
+            // clean up the output
+            for(var i = 0; i < lines.length ; i++) {
+                
+                 // clean up and split each line
+                var nospaces = lines[i].replace(/\s\s+/g, ',');
+                nospaces = nospaces.toLowerCase();
+                lines[i]= nospaces;   
+            }
+            
+            
+            var json = [];
+            var headers = lines[0].split(',');
+            
+            // now create a json obj using the headers as var names, last line is always empty too
+            for(var i = 1; i < lines.length -1 ; i++) {
+                
+                var listedMachine = lines[i].split(',');
+                var machineObj=Object();
+                
+                for(var j = 0; j < headers.length ; j++) {
+                    
+                    machineObj[headers[j]] = listedMachine[j];
+                    
+                }
+                
+                json.push(machineObj);
+                
+            }
+            
+            d.resolve(json);
             
         }); 
         

@@ -21,7 +21,7 @@ describe('#ls',function() {
         machine.ls().then(
             function (output) {
                 console.log(output);
-                output.should.be.a('string');
+                output.should.be.instanceof(Array);
                 done();
             }
         ).fail(function(err){ 
@@ -39,7 +39,7 @@ describe('#ls',function() {
                 done();
             }
             
-            result.should.be.a('string');
+            result.should.be.instanceof(Array);
             done();
         })
             
