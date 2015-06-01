@@ -14,7 +14,7 @@
 * limitations under the License.
 **/
 
-var q = require("Q");
+var q = require("q");
 var os = require("os");
 
 module.exports = {
