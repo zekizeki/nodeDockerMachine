@@ -28,7 +28,7 @@ module.exports = {
         exec('docker-machine ls', function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -97,7 +97,7 @@ module.exports = {
         exec(command, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -130,7 +130,7 @@ module.exports = {
         exec('docker-machine rm '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -153,7 +153,7 @@ module.exports = {
         exec('docker-machine active '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -176,7 +176,7 @@ module.exports = {
         exec('docker-machine inspect '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
             
@@ -211,7 +211,7 @@ module.exports = {
         exec(command, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -245,7 +245,7 @@ module.exports = {
         exec('docker-machine kill '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -268,7 +268,7 @@ module.exports = {
         exec('docker-machine start '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -292,7 +292,7 @@ module.exports = {
         exec('docker-machine stop '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -317,7 +317,7 @@ module.exports = {
         exec('docker-machine restart '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -341,7 +341,7 @@ module.exports = {
         exec('docker-machine upgrade '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -364,7 +364,7 @@ module.exports = {
         exec('docker-machine ssh '+machineName+ ' '+command, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -388,7 +388,7 @@ module.exports = {
         exec('docker-machine url '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
@@ -412,7 +412,7 @@ module.exports = {
         exec('docker-machine ip '+machineName, function (error, stdout, stderr) {
             
             if(error) {
-                d.reject(stdout);
+                d.reject(stderr);
                 return;
             }
                 
