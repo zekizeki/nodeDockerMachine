@@ -56,10 +56,15 @@ module.exports = {
                 
                 var listedMachine = lines[i].split(',');
                 var machineObj=Object();
+                var offset = 0;
                 
                 for(var j = 0; j < headers.length ; j++) {
                     
-                    machineObj[headers[j]] = listedMachine[j];
+                    if (headers[j] == 'active' && listedMachine[j] != '*') {
+                        offset = -1;
+                        continue;
+                    }
+                    machineObj[headers[j]] = listedMachine[j + offset];
                     
                 }
                 
