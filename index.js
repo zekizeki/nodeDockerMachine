@@ -50,14 +50,13 @@ module.exports = {
             
             var json = [];
             var headers = lines[0].split(',');
-            var offset = 0;
             
             // now create a json obj using the headers as var names, last line is always empty too
             for(var i = 1; i < lines.length -1 ; i++) {
                 
                 var listedMachine = lines[i].split(',');
                 var machineObj=Object();
-                offset = 0;
+                var offset = 0;
                 
                 for(var j = 0; j < headers.length ; j++) {
                     
