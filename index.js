@@ -421,7 +421,7 @@ module.exports = {
                 return;
             }
                 
-            d.resolve(stdout);
+            d.resolve(stdout.replace('\n', ''));
             
         }); 
         
