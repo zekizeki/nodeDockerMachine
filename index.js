@@ -204,11 +204,11 @@ module.exports = {
     
     
     
-    regenerateCerts: function(machineName,options,callback) {
+    regenerateCerts: function(machineName,callback) {
         
         var d = q.defer();
         
-        var command = 'docker-machine regenerate-certs '+machineName;
+        var command = 'docker-machine regenerate-certs -f '+machineName;
         
         console.log(command);
         
@@ -421,7 +421,7 @@ module.exports = {
                 return;
             }
                 
-            d.resolve(stdout);
+            d.resolve(stdout.replace('\n', ''));
             
         }); 
         
