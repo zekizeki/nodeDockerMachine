@@ -1,6 +1,6 @@
 {
   "name": "dockermachine",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A wrapper for the docker-machine CLI",
   "homepage":"https://github.com/zekizeki/nodeDockerMachine",
   "main": "index.js",
