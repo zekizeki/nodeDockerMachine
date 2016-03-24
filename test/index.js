@@ -74,12 +74,12 @@ describe('#create',function() {
 describe('#active',function() {
     
     
-    it('make a machine active', function(done) {
+    it('gets the active  machine', function(done) {
         
         // no timeout, creating the machine could take a while
         this.timeout(0);
         
-        machine.active(machineName).then(
+        machine.active().then(
             function (output) {
                 console.log(output);
                 output.should.be.a('string');

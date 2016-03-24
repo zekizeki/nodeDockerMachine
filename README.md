@@ -20,7 +20,7 @@ npm install dockermachine
 
 ## The following docker-machine methods are implemented
 
--   active		Get or set the active machine
+-   active		Get the active machine name
 -   create		Create a machine
 -   config		Print the connection config for machine
 -   inspect		Inspect information about a machine

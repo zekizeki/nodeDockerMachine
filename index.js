@@ -150,12 +150,12 @@ module.exports = {
     },
     
     
-    active: function(machineName,callback) {
+    active: function(callback) {
         
         var d = q.defer();
       
         var exec = require('child_process').exec;
-        exec('docker-machine active '+machineName, function (error, stdout, stderr) {
+        exec('docker-machine active', function (error, stdout, stderr) {
             
             if(error) {
                 d.reject(stderr);
