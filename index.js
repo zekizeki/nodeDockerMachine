@@ -32,44 +32,68 @@ module.exports = {
                 return;
             }
                 
-            // parse the stdout into json, format is
-            //NAME        ACTIVE   DRIVER      STATE     URL                      SWARM
-            //mochatest   *        softlayer   Running   tcp://159.8.2.149:2376
-            
+
+            //NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER    ERRORS
+            //default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1.10.3   
+
+           
             var lines = stdout.split(os.EOL);
             
+
+
+            //getting the start and end positions for the subsequent substr operation
+            var letterboundaries = [];
+            letterboundaries.push(0);
+
+            var headerline = lines[0];
+
+            for(var i=0;i<headerline.length;i++) {
+                if(headerline[i]==' ' && headerline[i+1]!=' '){
+                    letterboundaries.push(i+1);
+                }
+            }
+            letterboundaries.push(headerline.length);
+
+
+
+            var linearrays = [];
+
             // clean up the output
             for(var i = 0; i < lines.length ; i++) {
                 
-                 // clean up and split each line
-                var nospaces = lines[i].replace(/\s\s+/g, ',');
-                nospaces = nospaces.toLowerCase();
-                lines[i]= nospaces;   
+                var stringarray = [];
+
+                for(var j = 0;j<letterboundaries.length-1;j++) {
+                    var newString = lines[i].substring(letterboundaries[j],letterboundaries[j+1]);
+                    stringarray.push(newString);
+                } 
+
+                linearrays.push(stringarray);
             }
             
             
             var json = [];
-            var headers = lines[0].split(',');
-            
-            // now create a json obj using the headers as var names, last line is always empty too
-            for(var i = 1; i < lines.length -1 ; i++) {
-                
-                var listedMachine = lines[i].split(',');
-                var machineObj=Object();
-                var offset = 0;
-                
-                for(var j = 0; j < headers.length ; j++) {
-                    
-                    if (headers[j] == 'active' && listedMachine[j] != '*') {
-                        offset = -1;
-                        continue;
+            var headers = [];
+
+            //building headers
+
+            for(var i = 0; i<linearrays[0].length;i++) {
+                headers.push(linearrays[0][i].trim().toLowerCase());
+            }
+
+            //building the json objects
+            for(var i=1;i<linearrays.length-1;i++){
+                var machineObj = Object();
+                for(var j=0;j<headers.length;j++){
+                    if(linearrays[i][j].trim()==''){
+                        machineObj[headers[j]] = undefined;
                     }
-                    machineObj[headers[j]] = listedMachine[j + offset];
-                    
+                    else{
+                        machineObj[headers[j]] =linearrays[i][j].trim();
+                    }
                 }
-                
+
                 json.push(machineObj);
-                
             }
             
             d.resolve(json);
