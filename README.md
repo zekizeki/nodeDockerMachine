@@ -108,7 +108,7 @@ This will return an object containing details of the named machine
 
 ## License 
 
-
+```
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -287,5 +287,5 @@ This will return an object containing details of the named machine
    END OF TERMS AND CONDITIONS
 
    
-
+```
 
