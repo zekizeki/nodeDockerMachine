@@ -56,7 +56,7 @@ var options = {
 ```
 
 
-###Create a machine
+### Create a machine
 
 ```javascript
     machine.create("mylovelymachine",options).then(
@@ -69,7 +69,7 @@ var options = {
         })
 ```
 
-###Delete a machine
+### Delete a machine
 ```javascript
     machine.rm("mylovelymachine").then(
         function (output) {
@@ -80,7 +80,7 @@ var options = {
         })
 ```
 
-###List machines
+### List machines
 This will return an array of objects representing each machine
 
 ```javascript
@@ -93,7 +93,7 @@ This will return an array of objects representing each machine
         })
 ```
 
-###Inspect a machine
+### Inspect a machine
 This will return an object containing details of the named machine
 
 ```javascript
@@ -104,7 +104,7 @@ This will return an object containing details of the named machine
         ).fail(function(err){ 
             console.log(err);
         })
-        ```
+```
 
 ## License 
 
