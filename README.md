@@ -12,7 +12,7 @@ The docker-machine command line tool must be installed and accessible in the pat
 
 
 ### Step 2: Installation
-    
+
 To install it, use npm:
 
 npm install dockermachine
@@ -22,7 +22,6 @@ npm install dockermachine
 
 -   active		Get the active machine name
 -   create		Create a machine
--   config		Print the connection config for machine
 -   inspect		Inspect information about a machine
 -   ip			Get the IP address of a machine
 -   kill			Kill a machine
@@ -63,8 +62,8 @@ var options = {
             function (output) {
                 console.log(output);
             }
-        ).fail(function(err){ 
-            
+        ).fail(function(err){
+
             console.log(err);
         })
 ```
@@ -75,7 +74,7 @@ var options = {
         function (output) {
                 console.log(output);
         }
-        ).fail(function(err){ 
+        ).fail(function(err){
             console.log(err);
         })
 ```
@@ -88,7 +87,7 @@ This will return an array of objects representing each machine
         function (output) {
                 console.log(output);
         }
-        ).fail(function(err){ 
+        ).fail(function(err){
             console.log(err);
         })
 ```
@@ -101,12 +100,12 @@ This will return an object containing details of the named machine
         function (output) {
                 console.log(output);
         }
-        ).fail(function(err){ 
+        ).fail(function(err){
             console.log(err);
         })
 ```
 
-## License 
+## License
 
 ```
                                  Apache License
@@ -286,6 +285,5 @@ This will return an object containing details of the named machine
 
    END OF TERMS AND CONDITIONS
 
-   
-```
 
+```
