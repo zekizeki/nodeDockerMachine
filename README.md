@@ -104,6 +104,13 @@ This will return an object containing details of the named machine
             console.log(err);
         })
 ```
+### Tests
+
+To run unit tests you must have virtualbox installed, a local VM will be created
+
+```
+npm test
+```
 
 ## License
 
