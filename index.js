@@ -36,8 +36,8 @@ module.exports = {
             //NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER    ERRORS
             //default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1.10.3
 
-
-            var lines = stdout.split(os.EOL);
+            //remove all end of line
+            var lines = stdout.split(/\r?\n/);
 
 
 
