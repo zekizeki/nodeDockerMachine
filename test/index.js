@@ -1,4 +1,5 @@
-var should = require('chai').should(),
+var should = require('chai').should()
+var expect = require('chai').expect;
 machine = require('../index');
 
 var softlayerUser = process.env.SL_USER;
@@ -25,37 +26,6 @@ var options = {
 
 var machineName = "mochatest";
 
-describe('#ls',function() {
-	it('lists out some machines', function(done) {
-        machine.ls().then(
-            function (output) {
-                console.log(output);
-                output.should.be.instanceof(Array);
-                done();
-            }
-        ).fail(function(err){
-
-            done(err);
-        })
-
-    });
-
-    it('lists out some machines using a callback', function(done) {
-        machine.ls(function (err,result) {
-
-            if(err) {
-                err.should.not.exist;
-                done();
-            }
-
-            result.should.be.instanceof(Array);
-            done();
-        })
-
-    });
-
-});
-
 
 describe('#create',function() {
 
@@ -78,7 +48,38 @@ describe('#create',function() {
     });
 });
 
+describe('#ls',function() {
+    it('lists out some machines', function(done) {
+        machine.ls().then(
+            function (output) {
+                console.log(output);
+                output.should.be.instanceof(Array);
+                expect(output).to.have.length.above(0);
+                done();
+            }
+        ).fail(function(err){
 
+            done(err);
+        })
+
+    });
+
+    it('lists out some machines using a callback', function(done) {
+        machine.ls(function (err,result) {
+
+            if(err) {
+                err.should.not.exist;
+                done();
+            }
+
+            result.should.be.instanceof(Array);
+            expect(result).to.have.length.above(0);
+            done();
+        })
+
+    });
+
+});
 
 describe('#active',function() {
 
